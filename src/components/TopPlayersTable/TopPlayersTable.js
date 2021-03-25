@@ -8,14 +8,15 @@ class TopPlayersTable extends Component {
 
         const { data, top, by } = this.props;
         const headers = ["player_name", "country_name", "total_shots", "total_goals"];
-        const options = ["total_goals", "total_shots"];
+        const columns = ["total_goals", "total_shots"];
 
         return(
             <div style={{ width: "48%" }}>
                 <Filters
-                    options={ options }
+                    columns={ columns }
+                    forTable={ "statsByPlayer" }
                     selectedAmount={ top }
-                    selectedOption={ by }
+                    selectedColumn={ by }
                 />
                 <SBTable
                     tableHeaders={ headers }
