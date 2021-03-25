@@ -5,12 +5,14 @@ class TopPlayersTable extends Component {
 
     render() {
 
-        const { data } = this.props;
+        const { data, top, by } = this.props;
 
         return(
             <SBTable
-                tableHeaders={ ["player_name", "total_shots", "total_goals", "country_name", "average_team_possession_percentage"] }
+                tableHeaders={ ["player_name", "country_name", "total_shots", "total_goals", "average_team_possession_percentage"] }
                 tableData={ data }
+                top={ top }
+                by={ by }
             />
         )
     }
