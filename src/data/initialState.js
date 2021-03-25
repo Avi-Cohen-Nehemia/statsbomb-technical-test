@@ -10,8 +10,16 @@ export const initialState = {
     teams: teams,
     matches: matches,
     stats: stats,
-    statsByPlayer: getStatsByPlayer(players, stats),
-    statsByTeam: getStatsByTeam(teams, matches)
+    statsByPlayer: {
+        stats: getStatsByPlayer(players, stats),
+        top: 5,
+        by: "total_goals"
+    },
+    statsByTeam: {
+        stats: getStatsByTeam(teams, matches),
+        top: 5,
+        by: "total_wins"
+    },
 };
 
 export default initialState;
