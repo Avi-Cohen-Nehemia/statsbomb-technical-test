@@ -38,7 +38,7 @@ export const getStatsByPlayer = (players, stats) => {
             total_goals: total_goals,
             total_shots: total_shots,
             total_completed_passes: total_completed_passes,
-            average_team_possession_percentage: average_team_possession_percentage
+            average_team_possession_percentage: average_team_possession_percentage.toFixed(2)
         }
     })
 
