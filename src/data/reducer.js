@@ -1,12 +1,17 @@
-// import initialState from "./initialState";
+const updateFilters = (state, { forTable, top, by}) => {
+    return {
+        ...state,
+        [forTable]: {
+            ...state[forTable],
+            top: top,
+            by: by
+        }
+    }
+}
 
 const reducer = (state, action) => {
     switch (action.type) {
-        // case "START_GAME" : return playerName(state, action);
-        // case "SET_SOUND" : return setSound(state);
-        // case "UPDATE_QUESTION": return updateQuestion(state, action);
-        // case "SET_STATISTICS": return setStatistics(state, action);
-        // case "RESET_GAME": return setReset(state);
+        case "UPDATE_FILTERS" : return updateFilters(state, action);
         default: return state;
     }
 };
