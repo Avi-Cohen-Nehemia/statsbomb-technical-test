@@ -1,4 +1,5 @@
 import React from "react";
+import "./assets/css/main.css";
 import Container from "react-bootstrap/Container";
 import TopPlayersTable from "./components/TopPlayersTable";
 import TopTeamsTable from "./components/TopTeamsTable";
