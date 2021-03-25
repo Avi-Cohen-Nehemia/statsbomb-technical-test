@@ -6,7 +6,7 @@ import TopTeamsTable from "./components/TopTeamsTable";
 const App = () => {
   return (
     <Container>
-        <h1>StatsBomb</h1>
+        <h1 className="display-3">StatsBomb</h1>
         <section className="d-flex justify-content-between">
             <TopPlayersTable />
             <TopTeamsTable />
