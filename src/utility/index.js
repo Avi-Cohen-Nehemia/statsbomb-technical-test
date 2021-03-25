@@ -3,7 +3,8 @@ export const getStatsByPlayer = (players, stats) => {
     const playersDetails = players.map((player) => {
         return {
             player_id: player.player_id,
-            player_name: player.player_known_name ? player.player_known_name : player.player_name
+            player_name: player.player_known_name ? player.player_known_name : player.player_name,
+            country_name: player.country_name
         }
     });
 
