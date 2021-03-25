@@ -9,7 +9,7 @@ class TopPlayersTable extends Component {
 
         return(
             <SBTable
-                tableHeaders={ ["player_name", "country_name"] }
+                tableHeaders={ ["player_name", "total_shots", "total_goals", "country_name", "average_team_possession_percentage"] }
                 tableData={ data }
             />
         )

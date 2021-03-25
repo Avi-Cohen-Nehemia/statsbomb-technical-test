@@ -3,7 +3,7 @@ import TopPlayersTable from "./TopPlayersTable";
 
 const mapStateToProps = (state) => {
     return {
-        data: state.players,
+        data: state.statsByPlayer,
     };
 };
 
