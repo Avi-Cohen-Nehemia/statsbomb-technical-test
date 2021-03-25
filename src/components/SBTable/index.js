@@ -31,7 +31,7 @@ class SBTable extends Component {
         return(
             <div
                 style={{
-                    width: "48%",
+                    width: "100%",
                     maxHeight: "20rem",
                     overflow: "auto"
                 }}
