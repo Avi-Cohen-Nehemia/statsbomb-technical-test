@@ -33,20 +33,21 @@ class Filters extends Component {
         const amounts = [5, 10, 20];
 
         return(
-            <Form className="d-flex" onSubmit={ this.handleSubmit }>
+            <Form className="d-flex mb-2" onSubmit={ this.handleSubmit }>
                 <DropdownButton
-                    title={ selectedOption }
+                    title={ selectedOption.replace(/_/g, ' ') }
                 >
                     {options.map((option, index) => (
                         <Dropdown.Item
                             key={index}
                             onClick={() => this.displayBy(option)}
                         >
-                            { option }
+                            { option.replace(/_/g, ' ') }
                         </Dropdown.Item>
                     ))}
                 </DropdownButton>
                 <DropdownButton
+                    className="ml-3"
                     title={ selectedAmount }
                 >
                     {amounts.map((amount, index) => (
@@ -58,7 +59,10 @@ class Filters extends Component {
                         </Dropdown.Item>
                     ))}
                 </DropdownButton>
-                <Button type="submit">
+                <Button
+                    className="ml-3"
+                    type="submit"
+                >
                     {"APPLY"}
                 </Button>
             </Form>

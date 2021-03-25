@@ -33,7 +33,7 @@ class SBTable extends Component {
                 style={{
                     width: "100%",
                     maxHeight: "20rem",
-                    overflow: "auto"
+                    overflowY: "auto"
                 }}
                 className="text-center"
             >
