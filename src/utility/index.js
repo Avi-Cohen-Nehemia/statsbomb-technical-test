@@ -53,7 +53,7 @@ export const getStatsByTeam = (teams, matches) => {
             return  team_id === match.match_home_team_id || team_id === match.match_away_team_id;
         });
 
-
+        // calculate total goals each team scored (excluding penalties)
         const total_goals = teamMatches.reduce((acc, match) => {
 
             if (team_id === match.match_home_team_id) {
@@ -63,7 +63,7 @@ export const getStatsByTeam = (teams, matches) => {
             return acc + match.match_away_score;
         }, 0);
 
-
+        // calculate total wins for each team
         const total_wins = teamMatches.reduce((acc, {
             match_home_score,
             match_away_score,
