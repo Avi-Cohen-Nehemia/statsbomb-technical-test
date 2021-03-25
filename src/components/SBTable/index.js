@@ -29,26 +29,40 @@ class SBTable extends Component {
         const { tableHeaders, tableData, top, by } = this.props
 
         return(
-            <Table striped bordered hover variant="dark">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        { tableHeaders.map((header, index) => (
-                            <th key={ index }>{ header.replace(/_/g, ' ') }</th>
-                        )) }
-                    </tr>
-                </thead>
-                <tbody>
-                    { this.getTopResults(tableData, top, by).map((dataPoint, index) => (
-                        <tr key={ index }>
-                            <td>{index + 1}</td>
-                            { tableHeaders.map((header) => (
-                                <td>{ dataPoint[header] }</td>
-                            ))}
+            <div
+                style={{
+                    width: "48%",
+                    maxHeight: "20rem",
+                    overflow: "auto"
+                }}
+                className="text-center"
+            >
+                <Table
+                    striped
+                    bordered
+                    hover
+                    variant="dark"
+                >
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            { tableHeaders.map((header, index) => (
+                                <th key={ index }>{ header.replace(/_/g, ' ') }</th>
+                            )) }
                         </tr>
-                    ))}
-                </tbody>
-            </Table>
+                    </thead>
+                    <tbody>
+                        { this.getTopResults(tableData, top, by).map((dataPoint, index) => (
+                            <tr key={ index }>
+                                <td>{index + 1}</td>
+                                { tableHeaders.map((header, index) => (
+                                    <td key={ index }>{ dataPoint[header] }</td>
+                                ))}
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
+            </div>
         )
     }
 }
