@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SBTable from "./../SBTable";
 
-class PlayersTable extends Component {
+class TopPlayersTable extends Component {
 
     render() {
 
@@ -16,4 +16,4 @@ class PlayersTable extends Component {
     }
 }
 
-export default PlayersTable;
+export default TopPlayersTable;

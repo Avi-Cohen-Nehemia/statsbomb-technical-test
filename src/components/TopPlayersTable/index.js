@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import PlayersTable from "./PlayersTable";
+import TopPlayersTable from "./TopPlayersTable";
 
 const mapStateToProps = (state) => {
     return {
@@ -17,4 +17,4 @@ const mapStateToProps = (state) => {
 //     };
 // };
 
-export default connect(mapStateToProps, null)(PlayersTable);
+export default connect(mapStateToProps, null)(TopPlayersTable);

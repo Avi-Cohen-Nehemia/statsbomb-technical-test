@@ -1,12 +1,12 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import PlayersTable from "./components/PlayersTable";
+import TopPlayersTable from "./components/TopPlayersTable";
 
 const App = () => {
   return (
     <Container>
       <h1>StatsBomb</h1>
-      <PlayersTable />
+      <TopPlayersTable />
     </Container>
   );
 }
