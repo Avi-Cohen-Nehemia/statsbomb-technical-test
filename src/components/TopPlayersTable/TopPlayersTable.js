@@ -11,7 +11,7 @@ class TopPlayersTable extends Component {
         const columns = ["total_goals", "total_shots"];
 
         return(
-            <div style={{ width: "48%" }}>
+            <div style={{ width: "49%" }}>
                 <Filters
                     columns={ columns }
                     forTable={ "statsByPlayer" }
