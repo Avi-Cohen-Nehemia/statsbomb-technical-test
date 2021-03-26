@@ -12,6 +12,7 @@ class TopPlayersTable extends Component {
 
         return(
             <div style={{ width: "49%" }}>
+                <h2>{ "Top Teams" }</h2>
                 <Filters
                     columns={ columns }
                     forTable={ "statsByPlayer" }
