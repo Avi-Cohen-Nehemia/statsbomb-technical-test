@@ -37,18 +37,19 @@ class Filters extends Component {
 
     render() {
 
+        const { amountToDisplay, displayBy } = this.state;
         const { columns } = this.props
         const amounts = [5, 10, 20];
 
         return(
             <Form className="d-flex mb-2" onSubmit={ this.handleSubmit }>
                 <DropdownButton
-                    title={ this.state.displayBy.replace(/_/g, ' ') }
+                    title={ displayBy.replace(/_/g, ' ') }
                 >
                     {columns.map((column, index) => (
                         <Dropdown.Item
-                            key={index}
-                            onClick={() => this.handleDisplayBy(column)}
+                            key={ index }
+                            onClick={ () => this.handleDisplayBy(column) }
                         >
                             { column.replace(/_/g, ' ') }
                         </Dropdown.Item>
@@ -56,12 +57,12 @@ class Filters extends Component {
                 </DropdownButton>
                 <DropdownButton
                     className="ml-3"
-                    title={ `Top: ${this.state.amountToDisplay}` }
+                    title={ `Top: ${amountToDisplay}` }
                 >
                     {amounts.map((amount, index) => (
                         <Dropdown.Item
-                            key={index}
-                            onClick={() => this.handleAmountToDisplay(amount)}
+                            key={ index }
+                            onClick={ () => this.handleAmountToDisplay(amount) }
                         >
                             { amount }
                         </Dropdown.Item>
