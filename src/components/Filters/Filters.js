@@ -14,7 +14,8 @@ class Filters extends Component {
         this.state = {
             displayBy: props.selectedColumn,
             amountToDisplay: props.selectedAmount,
-            forTable: props.forTable
+            forTable: props.forTable,
+            changeToApply: false
         }
 
         this.handleDisplayBy = this.handleDisplayBy.bind(this);
@@ -23,22 +24,29 @@ class Filters extends Component {
     }
 
     handleDisplayBy(column) {
-        this.setState({ displayBy: column.replace(/ /g, '_') });
+        this.setState({
+            displayBy: column.replace(/ /g, '_'),
+            changeToApply: true
+        });
     }
 
     handleAmountToDisplay(amount) {
-        this.setState({ amountToDisplay: amount });
+        this.setState({
+            amountToDisplay: amount,
+            changeToApply: true
+        });
     }
 
     handleSubmit(e) {
         e.preventDefault();
 
         this.props.updateFilters(this.state);
+        this.setState({ changeToApply: false });
     }
 
     render() {
 
-        const { amountToDisplay, displayBy } = this.state;
+        const { amountToDisplay, changeToApply, displayBy } = this.state;
         const { columns } = this.props
         const amounts = [5, 10, 20];
 
@@ -72,6 +80,7 @@ class Filters extends Component {
                 </DropdownButton>
                 <Button
                     className="ml-3"
+                    disabled={ !changeToApply }
                     type="submit"
                 >
                     {"APPLY"}
