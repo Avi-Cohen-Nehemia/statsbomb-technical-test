@@ -5,6 +5,8 @@ import matches from "./database/match-data";
 import stats from "./database/stat-data";
 import { getStatsByPlayer, getStatsByTeam } from "./../utility";
 
+const teamStats = getStatsByTeam(teams, matches);
+
 export const initialState = {
 	players: players,
     teams: teams,
@@ -16,10 +18,14 @@ export const initialState = {
         by: "total_goals"
     },
     statsByTeam: {
-        stats: getStatsByTeam(teams, matches),
+        stats: teamStats,
         top: 5,
         by: "total_wins"
     },
+    teamComparison: {
+        teamsToCompare: [teamStats[0], teamStats[1]],
+        compareBy: ["total_wins", "total_goals"]
+    }
 };
 
 export default initialState;

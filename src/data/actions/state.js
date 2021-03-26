@@ -6,3 +6,10 @@ export const updateFilters = (data) => {
         by: data.displayBy
     };
 }
+
+export const selectTeam = (data) => {
+    return {
+        type: "SELECT_TEAM",
+        selectedTeam: data,
+    };
+}
