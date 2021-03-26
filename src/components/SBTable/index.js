@@ -29,14 +29,7 @@ class SBTable extends Component {
         const { tableHeaders, tableData, top, by } = this.props
 
         return(
-            <div
-                style={{
-                    width: "100%",
-                    maxHeight: "25rem",
-                    overflowY: "auto"
-                }}
-                className="text-center"
-            >
+            <div className="SBTable-container">
                 <Table
                     striped
                     bordered
@@ -45,7 +38,7 @@ class SBTable extends Component {
                 >
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>{"#"}</th>
                             { tableHeaders.map((header, index) => (
                                 <th key={ index }>{ header.replace(/_/g, ' ') }</th>
                             )) }
