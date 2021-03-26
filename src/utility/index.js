@@ -121,3 +121,12 @@ export const capitalizeSentence = (sentence, splitBy) => {
 
     return capitalizeSentence.join(" ");
 }
+
+export const addOrRemoveTeam = (selectedTeams, teamToAddOrRemove) => {
+
+    if (selectedTeams.includes(teamToAddOrRemove)) {
+        return selectedTeams.filter((team) => team.team_name !== teamToAddOrRemove.team_name);
+    }
+
+    return selectedTeams.concat(teamToAddOrRemove)
+}
