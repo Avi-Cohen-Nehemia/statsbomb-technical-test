@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
+import { capitalizeSentence } from "./../../utility";
 
 class Filters extends Component {
 
@@ -44,7 +45,8 @@ class Filters extends Component {
         return(
             <Form className="d-flex mb-2" onSubmit={ this.handleSubmit }>
                 <DropdownButton
-                    title={ displayBy.replace(/_/g, ' ') }
+                    className="text-capitalize"
+                    title={ capitalizeSentence(displayBy, "_") }
                 >
                     {columns.map((column, index) => (
                         <Dropdown.Item

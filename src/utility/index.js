@@ -107,3 +107,17 @@ export const getStatsByTeam = (teams, matches) => {
 
     return teamsListWithStats;
 };
+
+export const capitalizeSentence = (sentence, splitBy) => {
+
+    const splitSentence = sentence.split(splitBy);
+
+    const capitalizeSentence = splitSentence.map((word) => {
+
+        const capitalizeLetter = word[0].toUpperCase();
+
+        return word.replace(word[0], capitalizeLetter);
+    });
+
+    return capitalizeSentence.join(" ");
+}
