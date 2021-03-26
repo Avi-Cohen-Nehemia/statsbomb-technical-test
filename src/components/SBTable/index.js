@@ -31,6 +31,7 @@ class SBTable extends Component {
         return(
             <div className="SBTable-container">
                 <Table
+                    className="text-capitalize"
                     striped
                     bordered
                     hover
