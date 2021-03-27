@@ -45,9 +45,9 @@ export const getStatsByPlayer = (players, stats) => {
     return playersListWithStats;
 };
 
-export const getStatsByTeam = (teams, matches) => {
+export const getStatsByTeam = (teams, matches, players) => {
 
-    const teamsListWithStats = teams.map(({ team_id }, index) => {
+    const teamsListWithStats = teams.map(({ team_id, team_name }, index) => {
 
         // filter to get only the matches where the team played at
         const teamMatches = matches.filter((match) => {
@@ -98,10 +98,16 @@ export const getStatsByTeam = (teams, matches) => {
             return acc;
         }, 0);
 
+        const getTeamPlayers = players.filter((player) => player.country_name === team_name);
+        const total_shots = getTeamPlayers.reduce((acc, player) => {
+            return acc + player.total_shots
+        }, 0);
+
         return {
             ...teams[index],
             total_goals: total_goals,
-            total_wins: total_wins
+            total_wins: total_wins,
+            total_shots: total_shots
         }
     })
 
