@@ -27,7 +27,7 @@ class ComparisonFilter extends Component {
         const allStats = ["total_wins", "total_goals"];
 
         return(
-            <>
+            <div className="d-flex">
                 <DropdownButton
                     className="text-capitalize"
                     title="Teams"
@@ -42,8 +42,8 @@ class ComparisonFilter extends Component {
                     ))}
                 </DropdownButton>
                 <DropdownButton
-                    className="text-capitalize"
-                    title="Stats"
+                    className="text-capitalize ml-3"
+                    title="Compare"
                 >
                     {allStats.map((stat, index) => (
                         <Dropdown.Item
@@ -54,7 +54,7 @@ class ComparisonFilter extends Component {
                         </Dropdown.Item>
                     ))}
                 </DropdownButton>
-            </>
+            </div>
         )
     }
 }
