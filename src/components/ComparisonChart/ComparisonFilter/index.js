@@ -8,9 +8,8 @@ class ComparisonFilter extends Component {
 
         super(props);
 
-        this.state = {
-            selectedTeams: props.selectedTeams
-        }
+        this.handleSelectTeam = this.handleSelectTeam.bind(this);
+        this.handleSelectStat = this.handleSelectStat.bind(this);
     }
 
     handleSelectTeam(team) {
@@ -23,7 +22,7 @@ class ComparisonFilter extends Component {
 
     render() {
 
-        const { allTeams } = this.props
+        const { allTeams, selectedStats, selectedTeams } = this.props
         const allStats = ["total_wins", "total_goals"];
 
         return(
@@ -34,6 +33,7 @@ class ComparisonFilter extends Component {
                 >
                     {allTeams.map((team, index) => (
                         <Dropdown.Item
+                            active={ selectedTeams.includes(team) }
                             key={ index }
                             onClick={ () => this.handleSelectTeam(team) }
                         >
@@ -47,6 +47,7 @@ class ComparisonFilter extends Component {
                 >
                     {allStats.map((stat, index) => (
                         <Dropdown.Item
+                            active={ selectedStats.includes(stat) }
                             key={ index }
                             onClick={ () => this.handleSelectStat(stat) }
                         >

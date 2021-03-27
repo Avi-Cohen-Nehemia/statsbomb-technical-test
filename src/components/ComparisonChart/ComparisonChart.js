@@ -40,6 +40,7 @@ const ComparisonChart = ({ teamsToCompare, compareBy, allTeams, selectTeam, sele
             <ComparisonFilter
                 allTeams={ allTeams }
                 selectedTeams={ teamsToCompare }
+                selectedStats={ compareBy }
                 selectTeam={ selectTeam }
                 selectStat={ selectStat }
             />
