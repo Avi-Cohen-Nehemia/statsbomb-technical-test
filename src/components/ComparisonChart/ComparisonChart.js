@@ -36,6 +36,7 @@ const ComparisonChart = ({ teamsToCompare, compareBy, allTeams, selectTeam, sele
 
     return (
         <>
+            <h2>{"Compare Teams"}</h2>
             <ComparisonFilter
                 allTeams={ allTeams }
                 selectedTeams={ teamsToCompare }
