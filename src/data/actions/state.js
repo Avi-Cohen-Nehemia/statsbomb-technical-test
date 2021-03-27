@@ -13,3 +13,10 @@ export const selectTeam = (data) => {
         selectedTeam: data,
     };
 }
+
+export const selectStat = (data) => {
+    return {
+        type: "SELECT_STAT",
+        selectedStat: data,
+    };
+}
