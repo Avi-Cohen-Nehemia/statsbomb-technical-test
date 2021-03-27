@@ -2,7 +2,7 @@ import React from "react";
 import { Bar } from "react-chartjs-2";
 import ComparisonFilter from "./ComparisonFilter";
 
-const ComparisonChart = ({ teamsToCompare, compareBy, allTeams, selectTeam }) => {
+const ComparisonChart = ({ teamsToCompare, compareBy, allTeams, selectTeam, selectStat }) => {
 
     const datasets = teamsToCompare.map((team) => {
 
@@ -38,6 +38,7 @@ const ComparisonChart = ({ teamsToCompare, compareBy, allTeams, selectTeam }) =>
                 allTeams={ allTeams }
                 selectedTeams={ teamsToCompare }
                 selectTeam={ selectTeam }
+                selectStat={ selectStat }
             />
             <Bar
                 data={data}
