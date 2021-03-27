@@ -1,6 +1,7 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import ComparisonFilter from "./ComparisonFilter";
+import { capitalizeSentence } from "./../../utility";
 
 const ComparisonChart = ({ teamsToCompare, compareBy, allTeams, selectTeam, selectStat }) => {
 
@@ -15,8 +16,9 @@ const ComparisonChart = ({ teamsToCompare, compareBy, allTeams, selectTeam, sele
         }
     })
 
+    const formattedLabels = compareBy.map((label) => capitalizeSentence(label, "_"));
     const data = {
-        labels: compareBy,
+        labels: formattedLabels,
         datasets: datasets,
     }
       
