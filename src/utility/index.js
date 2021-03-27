@@ -122,11 +122,20 @@ export const capitalizeSentence = (sentence, splitBy) => {
     return capitalizeSentence.join(" ");
 }
 
-export const addOrRemoveTeam = (selectedTeams, teamToAddOrRemove) => {
+export const addOrRemoveTeam = (selectedTeams, team) => {
 
-    if (selectedTeams.includes(teamToAddOrRemove)) {
-        return selectedTeams.filter((team) => team.team_name !== teamToAddOrRemove.team_name);
+    if (selectedTeams.includes(team)) {
+        return selectedTeams.filter((selectedTeam) => selectedTeam.team_name !== team.team_name);
     }
 
-    return selectedTeams.concat(teamToAddOrRemove)
+    return selectedTeams.concat(team)
+}
+
+export const addOrRemoveStat = (selectedStats, stat) => {
+
+    if (selectedStats.includes(stat)) {
+        return selectedStats.filter((selectedStat) => selectedStat !== stat);
+    }
+
+    return selectedStats.concat(stat)
 }
