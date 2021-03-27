@@ -50,7 +50,7 @@ class ComparisonFilter extends Component {
                             key={ index }
                             onClick={ () => this.handleSelectStat(stat) }
                         >
-                            { stat }
+                            { stat.replace(/_/g, ' ') }
                         </Dropdown.Item>
                     ))}
                 </DropdownButton>
