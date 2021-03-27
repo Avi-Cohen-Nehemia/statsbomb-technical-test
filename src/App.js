@@ -8,7 +8,7 @@ import ComparisonChart from "./components/ComparisonChart";
 const App = () => {
   return (
     <Container>
-        <h1 className="display-3">StatsBomb</h1>
+        <h1 className="display-3">{ "StatsBomb" }</h1>
         <section className="d-flex justify-content-between mt-5 mb-5">
             <TopPlayersTable />
             <TopTeamsTable />
