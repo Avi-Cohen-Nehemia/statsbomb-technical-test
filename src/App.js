@@ -13,7 +13,7 @@ const App = () => {
             <TopPlayersTable />
             <TopTeamsTable />
         </section>
-        <section style={{ height: "450px" }} className="my-4">
+        <section style={{ height: "450px" }}>
           <ComparisonChart />
         </section>
     </Container>
