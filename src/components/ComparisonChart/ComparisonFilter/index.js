@@ -23,7 +23,7 @@ class ComparisonFilter extends Component {
     render() {
 
         const { allTeams, selectedStats, selectedTeams } = this.props
-        const allStats = ["total_wins", "total_goals"];
+        const allStats = ["total_wins", "total_goals", "total_shots"];
 
         return(
             <div className="d-flex">
@@ -33,11 +33,11 @@ class ComparisonFilter extends Component {
                 >
                     {allTeams.map((team, index) => (
                         <Dropdown.Item
-                            active={ selectedTeams.includes(team) }
                             key={ index }
                             onClick={ () => this.handleSelectTeam(team) }
                         >
                             { team.team_name }
+                            { selectedTeams.includes(team) ? <i className="fas fa-check ml-2"/> : null }
                         </Dropdown.Item>
                     ))}
                 </DropdownButton>
@@ -47,11 +47,11 @@ class ComparisonFilter extends Component {
                 >
                     {allStats.map((stat, index) => (
                         <Dropdown.Item
-                            active={ selectedStats.includes(stat) }
                             key={ index }
                             onClick={ () => this.handleSelectStat(stat) }
                         >
                             { stat.replace(/_/g, ' ') }
+                            { selectedStats.includes(stat) ? <i className="fas fa-check ml-2"/> : null }
                         </Dropdown.Item>
                     ))}
                 </DropdownButton>

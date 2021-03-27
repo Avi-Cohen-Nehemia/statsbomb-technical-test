@@ -5,7 +5,7 @@ import matches from "./database/match-data";
 import stats from "./database/stat-data";
 import { getStatsByPlayer, getStatsByTeam } from "./../utility";
 
-const teamStats = getStatsByTeam(teams, matches);
+const teamStats = getStatsByTeam(teams, matches, getStatsByPlayer(players, stats));
 
 export const initialState = {
 	players: players,
