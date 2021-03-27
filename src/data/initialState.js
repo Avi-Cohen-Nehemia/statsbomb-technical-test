@@ -23,7 +23,7 @@ export const initialState = {
         by: "total_wins"
     },
     teamComparison: {
-        teamsToCompare: [teamStats[0], teamStats[1]],
+        teamsToCompare: [teamStats[7], teamStats[6], teamStats[10]],
         compareBy: ["total_wins", "total_goals"]
     }
 };
