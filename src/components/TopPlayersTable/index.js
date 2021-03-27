@@ -9,14 +9,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         addTransaction: (data) => dispatch(addTransaction(data)),
-//         logoutUser: () => {
-//             dispatch(logout());
-//             history.push("/");
-//         }
-//     };
-// };
-
 export default connect(mapStateToProps, null)(TopPlayersTable);
