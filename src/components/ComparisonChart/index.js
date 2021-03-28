@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import ComparisonChart from "./ComparisonChart";
-import { selectTeam } from "./../../data/actions/state";
-import { selectStat } from "./../../data/actions/state";
+import { selectTeam, selectStat } from "./../../data/actions/state";
 
 const mapStateToProps = (state) => {
     return {

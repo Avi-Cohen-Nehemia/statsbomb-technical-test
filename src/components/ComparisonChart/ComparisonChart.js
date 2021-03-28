@@ -5,6 +5,9 @@ import { capitalizeSentence } from "./../../utility";
 
 const ComparisonChart = ({ teamsToCompare, compareBy, allTeams, selectTeam, selectStat }) => {
 
+    // format the chart's labels and data
+    const formattedLabels = compareBy.map((label) => capitalizeSentence(label, "_"));
+
     const datasets = teamsToCompare.map((team) => {
 
         const values = compareBy.map((column) => team[column] )
@@ -16,12 +19,12 @@ const ComparisonChart = ({ teamsToCompare, compareBy, allTeams, selectTeam, sele
         }
     })
 
-    const formattedLabels = compareBy.map((label) => capitalizeSentence(label, "_"));
     const data = {
         labels: formattedLabels,
         datasets: datasets,
     }
     
+
     // Chart Customization
     const options = {
         legend: {

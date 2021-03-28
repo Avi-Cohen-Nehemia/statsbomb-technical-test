@@ -1,3 +1,4 @@
+// figure out the relationship players and stats and calculate and return meaningful stats
 export const getStatsByPlayer = (players, stats) => {
 
     const playersDetails = players.map((player) => {
@@ -45,6 +46,7 @@ export const getStatsByPlayer = (players, stats) => {
     return playersListWithStats;
 };
 
+// figure out the relationship between teams, players and matches and calculate and return meaningful stats
 export const getStatsByTeam = (teams, matches, players) => {
 
     const teamsListWithStats = teams.map(({ team_id, team_name }, index) => {
@@ -114,6 +116,7 @@ export const getStatsByTeam = (teams, matches, players) => {
     return teamsListWithStats;
 };
 
+// capitalize the first letter of every word using js
 export const capitalizeSentence = (sentence, splitBy) => {
 
     const splitSentence = sentence.split(splitBy);
@@ -128,6 +131,7 @@ export const capitalizeSentence = (sentence, splitBy) => {
     return capitalizeSentence.join(" ");
 }
 
+// determine whether a team needs to be added or removed from the displayed list
 export const addOrRemoveTeam = (selectedTeams, team) => {
 
     const selectedTeamsIDList = selectedTeams.map(selectedTeam => selectedTeam.team_id)
@@ -139,6 +143,7 @@ export const addOrRemoveTeam = (selectedTeams, team) => {
     return selectedTeams.concat(team)
 }
 
+// determine whether a stat needs to be added or removed from the displayed columns
 export const addOrRemoveStat = (selectedStats, stat) => {
 
     if (selectedStats.includes(stat)) {

@@ -12,10 +12,12 @@ class ComparisonFilter extends Component {
         this.handleSelectStat = this.handleSelectStat.bind(this);
     }
 
+    // add or remove team from comparison chart
     handleSelectTeam(team) {
         this.props.selectTeam(team);
     }
 
+    // add or remove column from comparison chart
     handleSelectStat(stat) {
         this.props.selectStat(stat);
     }
@@ -53,7 +55,10 @@ class ComparisonFilter extends Component {
                             onClick={ () => this.handleSelectStat(stat) }
                         >
                             { stat.replace(/_/g, ' ') }
-                            { selectedStats.includes(stat) ? <i className="fas fa-check ml-2"/> : null }
+                            
+                            { selectedStats.includes(stat) ?
+                            <i className="fas fa-check ml-2"/>
+                            : null }
                         </Dropdown.Item>
                     ))}
                 </DropdownButton>

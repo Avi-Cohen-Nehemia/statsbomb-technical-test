@@ -3,6 +3,7 @@ import players from "./database/player-data";
 import teams from "./database/team-data";
 import matches from "./database/match-data";
 import stats from "./database/stat-data";
+// use a custom made function to transform the data to meaningful stats
 import { getStatsByPlayer, getStatsByTeam } from "./../utility";
 
 const teamStats = getStatsByTeam(teams, matches, getStatsByPlayer(players, stats));

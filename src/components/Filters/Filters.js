@@ -22,6 +22,7 @@ class Filters extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // select how to order results and enable apply button
     handleDisplayBy(column) {
         this.setState({
             displayBy: column.replace(/ /g, '_'),
@@ -29,6 +30,7 @@ class Filters extends Component {
         });
     }
 
+    // select how to many results to display and enable apply button
     handleAmountToDisplay(amount) {
         this.setState({
             amountToDisplay: amount,
@@ -39,6 +41,7 @@ class Filters extends Component {
     handleSubmit(e) {
         e.preventDefault();
 
+        // update results and disable apply button
         this.props.updateFilters(this.state);
         this.setState({ changeToApply: false });
     }
@@ -75,7 +78,7 @@ class Filters extends Component {
                             onClick={ () => this.handleAmountToDisplay(amount) }
                         >
                             { amount }
-                            { amount === amountToDisplay ? <i className="fas fa-check ml-2"/> : null }
+                            {amount === amountToDisplay ? <i className="fas fa-check ml-2"/> : null }
                         </Dropdown.Item>
                     ))}
                 </DropdownButton>
