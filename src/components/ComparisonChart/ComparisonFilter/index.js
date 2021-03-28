@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 
@@ -65,6 +66,14 @@ class ComparisonFilter extends Component {
             </div>
         )
     }
+}
+
+ComparisonFilter.propTypes = {
+    allTeams: PropTypes.array.isRequired,
+    selectedStats: PropTypes.array.isRequired,
+    selectedTeams: PropTypes.array.isRequired,
+    selectTeam: PropTypes.func.isRequired,
+    selectStat: PropTypes.func.isRequired
 }
 
 export default ComparisonFilter;
