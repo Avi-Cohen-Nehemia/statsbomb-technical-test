@@ -27,4 +27,10 @@ const TopPlayersTable = ({ data, top, by }) => {
     )
 }
 
+TopPlayersTable.propTypes = {
+    data: PropTypes.array.isRequired,
+    top: PropTypes.number.isRequired,
+    by: PropTypes.string.isRequired,
+}
+
 export default TopPlayersTable;
