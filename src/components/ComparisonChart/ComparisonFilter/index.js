@@ -37,7 +37,9 @@ class ComparisonFilter extends Component {
                             onClick={ () => this.handleSelectTeam(team) }
                         >
                             { team.team_name }
-                            { selectedTeams.includes(team) ? <i className="fas fa-check ml-2"/> : null }
+                            { selectedTeams.map(team => team.team_id).includes(team.team_id) ?
+                            <i className="fas fa-check ml-2"/>
+                            : null }
                         </Dropdown.Item>
                     ))}
                 </DropdownButton>

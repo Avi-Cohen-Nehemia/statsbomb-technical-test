@@ -130,7 +130,9 @@ export const capitalizeSentence = (sentence, splitBy) => {
 
 export const addOrRemoveTeam = (selectedTeams, team) => {
 
-    if (selectedTeams.includes(team)) {
+    const selectedTeamsIDList = selectedTeams.map(selectedTeam => selectedTeam.team_id)
+
+    if (selectedTeamsIDList.includes(team.team_id)) {
         return selectedTeams.filter((selectedTeam) => selectedTeam.team_name !== team.team_name);
     }
 
