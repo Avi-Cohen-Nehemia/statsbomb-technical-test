@@ -21,16 +21,30 @@ const ComparisonChart = ({ teamsToCompare, compareBy, allTeams, selectTeam, sele
         labels: formattedLabels,
         datasets: datasets,
     }
-      
+    
+    // Chart Customization
     const options = {
+        legend: {
+            labels: {
+                fontColor: "white",
+            }
+        },
         scales: {
             yAxes: [
                 {
                     ticks: {
+                        fontColor: "white",
                         beginAtZero: true,
                     },
                 },
             ],
+            xAxes: [
+                {
+                    ticks: {
+                        fontColor: "white",
+                    }
+                }
+            ]
         },
     }
 
