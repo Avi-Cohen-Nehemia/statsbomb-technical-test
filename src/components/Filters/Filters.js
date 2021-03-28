@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import DropdownButton from "react-bootstrap/DropdownButton";
@@ -92,6 +93,11 @@ class Filters extends Component {
             </Form>
         )
     }
+}
+
+Filters.propTypes = {
+    updateFilters: PropTypes.func.isRequired,
+    columns: PropTypes.array.isRequired,
 }
 
 export default Filters;
