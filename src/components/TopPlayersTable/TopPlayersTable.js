@@ -1,33 +1,30 @@
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import SBTable from "./../SBTable";
 import Filters from "./../Filters";
 
-class TopPlayersTable extends Component {
+const TopPlayersTable = ({ data, top, by }) => {
 
-    render() {
+    const headers = ["player_name", "country_name", "total_shots", "total_goals"];
+    const columns = ["total_goals", "total_shots"];
 
-        const { data, top, by } = this.props;
-        const headers = ["player_name", "country_name", "total_shots", "total_goals"];
-        const columns = ["total_goals", "total_shots"];
-
-        return(
-            <div style={{ width: "49%" }}>
-                <h2>{ "Top Players" }</h2>
-                <Filters
-                    columns={ columns }
-                    forTable={ "statsByPlayer" }
-                    selectedAmount={ top }
-                    selectedColumn={ by }
-                />
-                <SBTable
-                    tableHeaders={ headers }
-                    tableData={ data }
-                    top={ top }
-                    by={ by }
-                />
-            </div>
-        )
-    }
+    return (
+        <div style={{ width: "49%" }}>
+            <h2>{ "Top Players" }</h2>
+            <Filters
+                columns={ columns }
+                forTable={ "statsByPlayer" }
+                selectedAmount={ top }
+                selectedColumn={ by }
+            />
+            <SBTable
+                tableHeaders={ headers }
+                tableData={ data }
+                top={ top }
+                by={ by }
+            />
+        </div>
+    )
 }
 
 export default TopPlayersTable;
