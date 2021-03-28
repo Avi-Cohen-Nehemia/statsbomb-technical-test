@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Table from 'react-bootstrap/Table'
 
 class SBTable extends Component {
@@ -59,6 +60,13 @@ class SBTable extends Component {
             </div>
         )
     }
+}
+
+SBTable.propTypes = {
+    tableHeaders: PropTypes.array.isRequired,
+    tableData: PropTypes.array.isRequired,
+    top: PropTypes.number.isRequired,
+    by: PropTypes.string.isRequired
 }
 
 export default SBTable;
