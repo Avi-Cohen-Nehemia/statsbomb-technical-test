@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Bar } from "react-chartjs-2";
 import ComparisonFilter from "./ComparisonFilter";
 import { capitalizeSentence } from "./../../utility";
@@ -67,6 +68,14 @@ const ComparisonChart = ({ teamsToCompare, compareBy, allTeams, selectTeam, sele
             />
         </>
     )
+}
+
+ComparisonChart.propTypes = {
+    teamsToCompare: PropTypes.array.isRequired,
+    compareBy: PropTypes.array.isRequired,
+    allTeams: PropTypes.array.isRequired,
+    selectTeam: PropTypes.func.isRequired,
+    selectStat: PropTypes.func.isRequired
 }
 
 export default ComparisonChart;
